@@ -47,6 +47,6 @@ int[] Reverse(int[] array)
 
 int[] filled_array = GetRandomArray(5, -10, 10);
 
-Console.WriteLine($"{string.Join(", ", filled_array)}" + $"[{string.Join(", ", Reverse(filled_array))}]");
+Console.WriteLine($"{string.Join(", ", filled_array)}" + " " + $"[{string.Join(", ", Reverse(filled_array))}]");
 
 
