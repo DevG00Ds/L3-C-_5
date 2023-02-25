@@ -23,30 +23,51 @@ int[] GetRandomArray(int lenght, int leftRange, int RightRange)
     return array;
 }
 
+//true - findNumber - найден в Array 
+// false findNumber - не найден в Array 
+bool IsElementInArray(int [] array, int findNumber)
+{
+    bool result = false;
+    
+    for (int i = 0; i < array.Length; i++)
+    {
+        if ( array[i] == findNumber)
+        {
+            result = true;
+            break;
+        }
+    }
+    return result;
+}
+
+
 int lenght = ReadNumber("Длинна Массива : ");
 int leftRange = ReadNumber("Граница Левой части Массива : ");
 int RightRange = ReadNumber("Граница правой части Массива : ");
+int finding = 5;
 
 int[ ] array = GetRandomArray(lenght,leftRange, RightRange);
 Console.WriteLine($"[{string.Join(", ", array)}]");
+bool res = IsElementInArray(array, finding);
+Console.WriteLine(res);
 
-Console.WriteLine(" Введите число : ");
+// Console.WriteLine(" Введите число : ");
 
-int number = Convert.ToInt32(Console.ReadLine());
-int count = 0;
+// int number = Convert.ToInt32(Console.ReadLine());
+// int count = 0;
 
-for ( int i =0; i< array.Length; i++)
-{
-    if (array[i] == number)
-    count++;
-}
-if ( count == 0)
-{
-    Console.WriteLine("НЕТ");
-}
-else
-{
-    Console.WriteLine("ДА");
-}
+// for ( int i =0; i< array.Length; i++)
+// {
+//     if (array[i] == number)
+//     count++;
+// }
+// if ( count == 0)
+// {
+//     Console.WriteLine("НЕТ");
+// }
+// else
+// {
+//     Console.WriteLine("ДА");
+// }
 
 
