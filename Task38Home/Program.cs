@@ -7,3 +7,13 @@
 
 
 
+int[] GetRandomArray(int lenght, int leftRange, int RightRange)
+{
+    int[] array = new int[lenght];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Random.Shared.Next(leftRange, RightRange + 1);
+    }
+    return array;
+}

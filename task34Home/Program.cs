@@ -5,20 +5,29 @@
 // [345, 897, 568, 238] -> 2
 
 
-Console.WriteLine("Введите размер массива");
-int size = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[size];
-
-int[] GetRandomArray(int[] array)
+int ReadNumber(string messageToUser)
 {
+    Console.Write(messageToUser);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+
+int[] GetRandomArray(int lenght, int leftRange, int RightRange)
+{
+    int[] array = new int[lenght];
+
     for (int i = 0; i < array.Length; i++)
     {
         array[i] = new Random().Next(100, 1000);
     }
     return array;
 }
+int lenght = ReadNumber(" Задайте длинну массива : ");
+int leftRange = ReadNumber(" Задайте левый диапозон чисел : ");
+int RightRange = ReadNumber(" задайте правый диапозон чисел : ");
 
-GetRandomArray(array);
+int[] array = GetRandomArray(lenght, leftRange, RightRange);
+
 Console.WriteLine("Вот наш массив: ");
 Console.WriteLine($"[{string.Join(", ", array)}]");
 
@@ -31,8 +40,3 @@ for (int i = 0; i < array.Length; i++)
     }
 
 Console.WriteLine($"Всего {array.Length} чисел, из них {count} ЧЕТНЫХ");
-
-
-
-
-
