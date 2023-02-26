@@ -21,19 +21,19 @@ GetRandomArray(array);
 Console.WriteLine("Вот наш массив: ");
 Console.WriteLine($"[{string.Join(", ", array)}]");
 
-double Min = 0;
-double Max = 0;
+double Min = Int32.MaxValue;
+double Max = Int32.MinValue;
 
 for (int i = 0; i < array.Length; i++)
 {
     if (array[i] > Max)
-    {
-        Max = array[i];
-    }
+        {
+            Max = array[i];
+        }  
     if (array[i] < Min)
-    {
-        Min = array[i];
-    }
+        {
+            Min = array[i];
+        }
 }
 
 Console.WriteLine($"Всего {array.Length} чисел, Макс. значение = {Max}, Мин. значение = {Min}");
